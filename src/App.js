@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
-import { Link,hashHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 class App extends Component {
   render() {
     return (

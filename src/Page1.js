@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css'
+
+import {hashHistory } from 'react-router'
+
 class Page1 extends Component {
   constructor(props){
     super(props)
@@ -9,9 +12,8 @@ class Page1 extends Component {
     return (
       <div className='mainContainer'>
           <div className='subContainer'>
-              <div className='page1Cont'>
-                  <button className='button1' onClick={(e)=>{console.log('onCLicke Triggered',e.type)}}> PAGE 1 </button>
-              </div>
+              <h1> This is Page 1 </h1>
+              <button className='button1' onClick={()=>{hashHistory.goBack()}}> Go back to Home </button>
           </div>
       </div>
     );
