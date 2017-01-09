@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css'
 class Page2 extends Component {
+  constructor(props){
+    super(props)
+    console.log('initial State Trigger on Page2');
+  }
   render() {
     return (
       <div className='mainContainer'>
