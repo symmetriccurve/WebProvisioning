@@ -2,8 +2,28 @@
   background-color:lightgrey;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
   height: fill;
+  width: fill;
+  flex-direction: column;
+}
+
+.toDoAddBar{
+  height: 100px;
+  width:fill;
+   font-size: 250%;
+}
+
+.toDoListCont{
+  height: fill;
+  align-items: center;
+  justify-content: center;
+}
+
+.eachToDoRow{
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
 }
 
 .subContainer{
