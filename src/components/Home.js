@@ -7,39 +7,35 @@ class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
-      todo : [
-        {
-          todo : 'Be Good',
-          status : false
-        },
-        {
-          todo : 'Talk Less',
-          status : false
-        },
-        {
-          todo : 'Think More',
-          status : false
-        },
-        {
-          todo : 'Aim High',
-          status : false
-        },
-      ],
-      currentTodo : 'Add To Do Here'
+      todo : [],
+      currentTodo : 'Add your toDo here'
     }
   }
 
   _handleKeyPress = (keyPressed) => {
-
+    console.log('before Enter',this.state.currentTodo);
     if(keyPressed.key == 'Enter'){
-        console.log('keyPressed',keyPressed.key);
         this.setState({
-          todo:[...this.state.todo,this.state.currentTodo],
+          todo:[
+            ...this.state.todo,
+            {
+              todo:this.state.currentTodo,
+              status:false,
+              id: Date.now()
+            }
+          ],
           currentTodo:''
         })
     }
 
 
+  }
+
+  _handleChange = (e) =>{
+    console.log('e',e);
+      this.setState({
+          currentTodo:e.target.value
+      })
   }
 
   render() {
@@ -48,11 +44,11 @@ class Home extends Component {
           <input className='toDoAddBar'
             value={this.state.currentTodo}
             onSubmit={(e)=>{console.log('onSubmit',e);}}
-            onChange={(e)=>{this.setState({currentTodo:e.target.value})}}
-            onKeyPress={this._handleKeyPress} />
+            onChange={(e)=>{this._handleChange(e)}}
+            onKeyPress={(e)=>this._handleKeyPress(e)} />
           <div className='toDoListCont'>
             {this.state.todo.map((eachtoDo,i)=>{
-              return <ToDoRow todo={eachtoDo.todo} key={i}/>
+              return <ToDoRow item={eachtoDo} key={i}/>
             })}
           </div>
       </div>

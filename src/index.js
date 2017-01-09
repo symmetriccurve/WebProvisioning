@@ -5,6 +5,7 @@ import Page2 from './components/Page2';
 import { Router, Route, hashHistory } from 'react-router'
 
 
+
 ReactDOM.render(
   (
   <Router history={hashHistory}>

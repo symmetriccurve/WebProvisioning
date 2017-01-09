@@ -6,12 +6,15 @@ import {hashHistory } from 'react-router'
 class ToDoRow extends Component {
   constructor(props){
     super(props)
-    console.log('initial State Trigger on Page1');
   }
   render() {
     return (
       <div className='eachToDoRow'>
-          <h1>{this.props.todo}</h1>
+          <h1>{this.props.item.todo}</h1>
+          <input type="checkbox" className='checkBox'/>
+          {
+            this.props.item.status ? <button className='checkBox'>DEL</button> : null
+          }
       </div>
     );
   }
