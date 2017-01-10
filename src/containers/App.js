@@ -15,8 +15,7 @@ class App extends Component{
 }
 
 const props = state => ({
-  todos: state.todos,
-  name: 'Moses'
+  todos: state.todos
 })
 
 const Actions = Actions =>({
