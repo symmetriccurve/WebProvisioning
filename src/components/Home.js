@@ -13,8 +13,10 @@ class Home extends Component {
   }
 
   _handleKeyPress = (keyPressed) => {
-    console.log('before Enter',this.state.currentTodo);
+    //console.log('before Enter',this.state.currentTodo);
     if(keyPressed.key == 'Enter'){
+      //console.log('Actions to Home',this.props.actions.addTodo(this.state.currentTodo));
+      this.props.actions.addTodo(this.state.currentTodo)
         this.setState({
           todo:[
             ...this.state.todo,
@@ -32,7 +34,7 @@ class Home extends Component {
   }
 
   _handleChange = (e) =>{
-    console.log('e',e);
+    //console.log('e',e);
       this.setState({
           currentTodo:e.target.value
       })
@@ -43,7 +45,6 @@ class Home extends Component {
       <div className='mainContainer'>
           <input className='toDoAddBar'
             value={this.state.currentTodo}
-            onSubmit={(e)=>{console.log('onSubmit',e);}}
             onChange={(e)=>{this._handleChange(e)}}
             onKeyPress={(e)=>this._handleKeyPress(e)} />
           <div className='toDoListCont'>
